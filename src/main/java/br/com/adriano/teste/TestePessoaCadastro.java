@@ -1,10 +1,12 @@
-package br.com.adriano.model;
+package br.com.adriano.teste;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class TestePessoaEntity {
+import br.com.adriano.model.Pessoa;
+
+public class TestePessoaCadastro {
 
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("codekata");
