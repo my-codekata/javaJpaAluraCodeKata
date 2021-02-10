@@ -12,6 +12,9 @@ public class Pessoa {
 	private Long id;
 	private String nome;
 	
+	public Pessoa() {
+	}
+
 	public Pessoa(String nome) {
 		this.nome = nome;
 	}
