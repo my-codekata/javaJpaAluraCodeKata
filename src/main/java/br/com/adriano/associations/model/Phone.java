@@ -1,9 +1,6 @@
 package br.com.adriano.associations.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "phone")
 public class Phone {
@@ -12,6 +9,10 @@ public class Phone {
     private Integer id;
 
     private String number;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id", nullable = false)
+    private Person person;
 
     public Phone(String number) {
         this.number = number;
@@ -31,6 +32,14 @@ public class Phone {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override

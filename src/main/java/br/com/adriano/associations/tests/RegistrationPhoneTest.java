@@ -1,5 +1,6 @@
 package br.com.adriano.associations.tests;
 
+import br.com.adriano.associations.model.Person;
 import br.com.adriano.associations.model.Phone;
 
 import javax.persistence.EntityManager;
@@ -13,7 +14,11 @@ public class RegistrationPhoneTest {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("codekata");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+        Person person = new Person("Carla");
+
         entityManager.getTransaction().begin();
+        phone.setPerson(person);
+        entityManager.persist(person);
         entityManager.persist(phone);
         entityManager.getTransaction().commit();
 
